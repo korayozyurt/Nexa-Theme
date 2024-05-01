@@ -1,0 +1,91 @@
+<!-- Header -->
+
+<header class="z-50 xl:ml-[{{sidebarExtended ? '300px' : '72px'}}] sticky top-0">
+    <div class="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
+        <div class="flex justify-between items-center h-full">
+            <div class="flex items-center md:gap-6 gap-3">
+                <button class="relative group disabled:cursor-not-allowed opacity-50" (click)="hamburgerClicked()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div class="nav-tools flex items-center  gap-2">
+                right side
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Sidebar-->
+<div class="main-sidebar pointer-events-none fixed start-0 top-0 z-[60] flex h-full xl:z-10 print:hidden">
+    <div
+        class="border-default-200  pointer-events-auto relative z-20 flex h-full w-[72px] flex-col border-r border-dashed bg-card transition-all duration-300 translate-x-0">
+        <div class="pt-4">
+            <img src="./assets/logo/ikeLogo.svg" alt="" class="w-12 mx-auto">
+        </div>
+        <div class="relative overflow-hidden pt-6 grow">
+            <!-- Link Button List -->
+            <div class="h-full w-full rounded-[inherit]">
+                <div class="min-w-full table">
+                    <div class="mb-3 last:mb-0">
+                        <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative" (click)="hamburgerClicked()">
+                            <i class="fa-brands fa-square-whatsapp fa-lg mx-auto text-slate-400 hover:text-indigo-700"></i>
+                        </button>
+                    </div>
+
+                    <div class="mb-3 last:mb-0">
+                        <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative">
+                            <i class="fa-solid fa-phone fa-lg mx-auto text-slate-400 hover:text-indigo-700"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-5 flex flex-col items-center justify-center pb-6">
+            <button class="w-11 h-11 mx-auto text-default-500 flex items-center justify-center  rounded-md transition-all duration-200 hover:bg-primary hover:text-primary-foreground">
+                <i class="fa-solid fa-gear fa-lg text-slate-400"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar Extended -->
+    <div class="bg-white border-default-200 pointer-events-auto relative z-10 flex flex-col h-full 
+     border-r bg-card transition-all duration-300" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
+        <div class="border-default-200 pointer-events-auto relative z-30 flex flex-col border-r bg-card transition-all duration-300 overflow-hidden" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
+            <h2 class="text-lg bg-transparent z-50 font-semibold flex gap-4 items-center text-default-700 sticky top-0 py-4 px-4">
+                <span class="block">Üst Menü Başlık</span>
+            </h2>
+        </div>
+        <div class="relative overflow-hidden h-[calc(100%-40px)] grow">
+            <div class="h-full w-full rounded-[inherit]">
+                <div class="min-w-full table">
+                    <div class="px-4">
+                        <ul>
+                            <li class="mb-1.5 last:mb-0">
+                                <div class="flex-1">
+                                    <a href="#" class="flex font-medium text-sm capitalize px-[10px] py-3 gap-3 rounded-md cursor-pointer bg-indigo-700 text-white">
+                                        <span class="inline-flex items-center flex-grow-0">
+                                            <i class="fa-solid fa-chart-pie"></i>
+                                        </span>
+                                        <div class="flex-grow truncate">
+                                            Analytics
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="mb-1.5 last:mb-0">
+                                <div class="flex-1">
+                                    <a href="#" class="flex font-medium text-sm capitalize px-[10px] py-3 gap-3 rounded-md cursor-pointer  text-gray-600">
+                                        <span class="inline-flex items-center flex-grow-0"><i class="fa-solid fa-pen-ruler"></i></span>
+                                        <div class="flex-grow truncate">
+                                            Rules
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/plugins/fontawesome/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/fontawesome/all.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ee155f48-066c-40d0-9d09-4f47d2e46f41"
   }
 }
