@@ -26,17 +26,14 @@
             <!-- Link Button List -->
             <div class="h-full w-full rounded-[inherit]">
                 <div class="min-w-full table">
-                    <div class="mb-3 last:mb-0">
-                        <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative" (click)="hamburgerClicked()">
-                            <i class="fa-brands fa-square-whatsapp fa-lg mx-auto text-slate-400 hover:text-indigo-700"></i>
-                        </button>
-                    </div>
+                    @for (menu of sidebarMenuList; track $index) {
+                        <div class="mb-3 last:mb-0">
+                            <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative" (click)="menuClicked(menu)">
+                                <div [outerHTML]="menu.iconHtml"></div>
+                            </button>
+                        </div>
+                    }
 
-                    <div class="mb-3 last:mb-0">
-                        <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative">
-                            <i class="fa-solid fa-phone fa-lg mx-auto text-slate-400 hover:text-indigo-700"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -49,43 +46,37 @@
 
     <!-- Sidebar Extended -->
     <div class="bg-white border-default-200 pointer-events-auto relative z-10 flex flex-col h-full 
-     border-r bg-card transition-all duration-300" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
-        <div class="border-default-200 pointer-events-auto relative z-30 flex flex-col border-r bg-card transition-all duration-300 overflow-hidden" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
-            <h2 class="text-lg bg-transparent z-50 font-semibold flex gap-4 items-center text-default-700 sticky top-0 py-4 px-4">
-                <span class="block">Üst Menü Başlık</span>
-            </h2>
-        </div>
-        <div class="relative overflow-hidden h-[calc(100%-40px)] grow">
-            <div class="h-full w-full rounded-[inherit]">
-                <div class="min-w-full table">
-                    <div class="px-4">
-                        <ul>
+    border-r bg-card transition-all duration-300" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
+       <div class="border-default-200 pointer-events-auto relative z-30 flex flex-col border-r bg-card transition-all duration-300 overflow-hidden" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
+           <h2 class="text-lg bg-transparent z-50 font-semibold flex gap-4 items-center text-default-700 sticky top-0 py-4 px-4">
+               <span class="block">{{selectedMenu.text}}</span>
+           </h2>
+       </div>
+       <div class="relative overflow-hidden h-[calc(100%-40px)] grow">
+           <div class="h-full w-full rounded-[inherit]">
+               <div class="min-w-full table">
+                   <div class="px-4">
+                       <ul>
+                           @for (child of selectedMenu.children; track $index) {
                             <li class="mb-1.5 last:mb-0">
                                 <div class="flex-1">
                                     <a href="#" class="flex font-medium text-sm capitalize px-[10px] py-3 gap-3 rounded-md cursor-pointer bg-indigo-700 text-white">
                                         <span class="inline-flex items-center flex-grow-0">
-                                            <i class="fa-solid fa-chart-pie"></i>
+                                            <div [innerHtml]="child.iconHtml"></div>
                                         </span>
                                         <div class="flex-grow truncate">
-                                            Analytics
+                                            {{child.text}}
                                         </div>
                                     </a>
                                 </div>
                             </li>
-                            <li class="mb-1.5 last:mb-0">
-                                <div class="flex-1">
-                                    <a href="#" class="flex font-medium text-sm capitalize px-[10px] py-3 gap-3 rounded-md cursor-pointer  text-gray-600">
-                                        <span class="inline-flex items-center flex-grow-0"><i class="fa-solid fa-pen-ruler"></i></span>
-                                        <div class="flex-grow truncate">
-                                            Rules
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                           }
+
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+  
 </div>
