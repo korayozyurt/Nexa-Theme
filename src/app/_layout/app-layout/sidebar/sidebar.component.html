@@ -27,11 +27,12 @@
             <div class="h-full w-full rounded-[inherit]">
                 <div class="min-w-full table">
                     @for (menu of sidebarMenuList; track $index) {
-                        <div class="mb-3 last:mb-0 tooltip">
-                            <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative tooltip-trigger" (click)="menuClicked(menu)">
+                        <div class="mb-3 last:mb-0">
+                            <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative
+                             *:hover:text-indigo-800 *:hover:font-medium *:hover:scale-105" (click)="menuClicked(menu)">
                                 <div [outerHTML]="menu.iconHtml">
                                 </div>
-                                <span class="tooltip-text">Tooltip text</span>
+                                <span class="text-slate-500 text-xs">{{menu.text}}</span>
                             </button>
                         </div>
                     }
