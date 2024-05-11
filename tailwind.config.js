@@ -9,6 +9,10 @@ module.exports = {
   plugins: [],
   safelist: [
     "xl:ml-[300px]",
+    "xl:ml-72",
+    "xl:ml-16",
+    "w-16",
+    "w-0",
     "xl:ml-[72px]"
   ]
 }

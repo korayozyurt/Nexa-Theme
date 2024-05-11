@@ -1,6 +1,6 @@
 <!-- Header -->
 
-<header class="z-50 xl:ml-[{{sidebarExtended ? '300px' : '72px'}}] sticky top-0">
+<header class="z-50 xl:ml-{{sidebarExtended ? '72' : '16'}} sticky top-0">
     <div class="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
         <div class="flex justify-between items-center h-full">
             <div class="flex items-center md:gap-6 gap-3">
@@ -18,7 +18,7 @@
 <!--Sidebar-->
 <div class="main-sidebar pointer-events-none fixed start-0 top-0 z-[60] flex h-full xl:z-10 print:hidden">
     <div
-        class="border-default-200  pointer-events-auto relative z-20 flex h-full w-[72px] flex-col border-r border-dashed bg-card transition-all duration-300 translate-x-0">
+        class="border-default-200  pointer-events-auto relative z-20 flex h-full w-16 flex-col border-r border-dashed bg-card transition-all duration-300 translate-x-0">
         <div class="pt-4">
             <img src="./assets/logo/ikeLogo.svg" alt="" class="w-12 mx-auto">
         </div>
@@ -49,7 +49,7 @@
 
     <!-- Sidebar Extended -->
     <div class="bg-white border-default-200 pointer-events-auto relative z-10 flex flex-col h-full 
-    border-r bg-card transition-all duration-300" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
+    border-r bg-card transition-all duration-300 w-{{sidebarExtended ? '72' : '0'}}" >
        <div class="border-default-200 pointer-events-auto relative z-30 flex flex-col border-r bg-card transition-all duration-300 overflow-hidden" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
            <h2 class="text-lg bg-transparent z-50 font-semibold flex gap-4 items-center text-default-700 sticky top-0 py-4 px-4">
                <span class="block">{{selectedMenu.text}}</span>
