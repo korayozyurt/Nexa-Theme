@@ -37,7 +37,7 @@
                         <button class="h-12 w-12 mx-auto rounded-md transition-all duration-300 flex flex-col items-center justify-center cursor-pointer relative
                              *:hover:text-indigo-800 *:hover:font-medium *:hover:scale-105"
                             (click)="menuClicked(menu)">
-                            <div [outerHTML]="menu.iconHtml">
+                            <div [innerHtml]="menu.iconHtml" class="fa-lg mx-auto text-slate-400">
                             </div>
                             <span class="text-slate-500 text-xs">{{menu.text}}</span>
                         </button>
@@ -95,6 +95,7 @@
 
 </div>
 
+<!-- For Mobile, dialog modal is opened -->
 <div class="h-full w-full bg-transparent fixed top-0 left-0" [hidden]="!menuDialogShow" (click)="openMenudialog()">
 
 </div>
