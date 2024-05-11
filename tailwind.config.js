@@ -12,6 +12,8 @@ module.exports = {
     "xl:ml-72",
     "xl:ml-16",
     "w-16",
+    "w-60",
+    "w-72",
     "w-0",
     "xl:ml-[72px]"
   ]

@@ -23,28 +23,27 @@ export class SidebarComponent {
     ]}
   ];
 
+  parentSidebarExtended: boolean = false;
   sidebarExtended: boolean = false;
   selectedMenu: SidebarMenu = this.sidebarMenuList[0];
 
-
   hamburgerClicked() {
     this.sidebarExtended = !this.sidebarExtended;
+    this.parentSidebarExtended = !this.parentSidebarExtended;
   }
 
   menuClicked(menu: SidebarMenu) {
-    //this.sidebarExtended = menu.index !== this.selectedMenu.index;
     this.sidebarExtended = !this.sidebarExtended;
     this.selectedMenu = menu;
+  }
 
-    /*
-    if(menu.index !== this.selectedMenu?.index) {
-      this.sidebarExtended = true;
-      this.selectedMenu = menu;
-    } else {
-      this.sidebarExtended = false;
-      this.selectedMenu = this.sidebarMenuList[0];
-    }
-*/
+  openMenudialog() {
+
+  }
+
+  test() {
+    console.log('test');
+    
   }
 
 }

@@ -4,7 +4,10 @@
     <div class="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
         <div class="flex justify-between items-center h-full">
             <div class="flex items-center md:gap-6 gap-3">
-                <button class="relative group disabled:cursor-not-allowed opacity-50" (click)="hamburgerClicked()">
+                <button class="relative hidden xl:block group disabled:cursor-not-allowed opacity-50" (click)="hamburgerClicked()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="relative block xl:hidden group disabled:cursor-not-allowed opacity-50" (click)="openMenudialog()">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -16,7 +19,7 @@
 </header>
 
 <!--Sidebar-->
-<div class="main-sidebar pointer-events-none fixed start-0 top-0 z-[60] flex h-full xl:z-10 print:hidden">
+<div class="main-sidebar pointer-events-none w-0 xl:w-auto overflow-hidden fixed start-0 top-0 z-[60] flex h-full xl:z-10 print:hidden">
     <div
         class="border-default-200  pointer-events-auto relative z-20 flex h-full w-16 flex-col border-r border-dashed bg-card transition-all duration-300 translate-x-0">
         <div class="pt-4">
@@ -49,7 +52,7 @@
 
     <!-- Sidebar Extended -->
     <div class="bg-white border-default-200 pointer-events-auto relative z-10 flex flex-col h-full 
-    border-r bg-card transition-all duration-300 w-{{sidebarExtended ? '72' : '0'}}" >
+    border-r bg-card transition-all duration-300 w-{{sidebarExtended ? '60' : '0'}}" >
        <div class="border-default-200 pointer-events-auto relative z-30 flex flex-col border-r bg-card transition-all duration-300 overflow-hidden" [ngStyle]="{ 'width.px': sidebarExtended ? 228 : 0 }">
            <h2 class="text-lg bg-transparent z-50 font-semibold flex gap-4 items-center text-default-700 sticky top-0 py-4 px-4">
                <span class="block">{{selectedMenu.text}}</span>
@@ -82,4 +85,21 @@
        </div>
    </div>
   
+</div>
+
+<div class="hidden z-20 h-2/4 w-1/2 m-auto inset-x-0 inset-y-0 p-4 bg-white rounded-sm overflow-y-scroll">
+    safasfasdfas sadfasd 
+    asdfa
+    fd asf
+    dsafas
+    dfa
+    sf
+    sadfasddfa
+    asf
+    dsa
+   
+    fasfsa
+    <div class="h-56 bg-red-50">
+            sfa             
+    </div>
 </div>
