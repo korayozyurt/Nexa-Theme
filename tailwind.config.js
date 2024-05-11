@@ -15,7 +15,12 @@ module.exports = {
     "w-60",
     "w-72",
     "w-0",
-    "xl:ml-[72px]"
+    "h-0",
+    "h-2/4",
+    "h-72",
+    "xl:ml-[72px]",
+    "hidden",
+    "fixed",
   ]
 }
 

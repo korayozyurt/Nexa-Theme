@@ -20,16 +20,20 @@ export class SidebarComponent {
       {iconHtml: '<i class="fa-solid fa-address-book"></i>', text: 'Adres Defteri'},
       {iconHtml: '<i class="fa-solid fa-tower-cell"></i>', text: 'LTE Anteni Seç'},
       {iconHtml: '<i class="fa-solid fa-satellite-dish"></i>', text: 'Uydu Seç'}
-    ]}
+    ]},
+    {index: 3,iconHtml: '<i class="fa-solid fa-magnifying-glass-chart"></i>', text: 'Artificial Intelligence', children: [
+      {iconHtml: '<i class="fa-solid fa-brain"></i>', text: 'Makine Öğrenmesi'},
+      {iconHtml: '<i class="fa-brands fa-sketch"></i>', text: 'Yapay Zeka'},
+      {iconHtml: '<i class="fa-solid fa-microchip"></i>', text: 'Donanım'}
+    ]},
   ];
 
-  parentSidebarExtended: boolean = false;
+  menuDialogShow: boolean = false;
   sidebarExtended: boolean = false;
   selectedMenu: SidebarMenu = this.sidebarMenuList[0];
 
   hamburgerClicked() {
     this.sidebarExtended = !this.sidebarExtended;
-    this.parentSidebarExtended = !this.parentSidebarExtended;
   }
 
   menuClicked(menu: SidebarMenu) {
@@ -38,12 +42,8 @@ export class SidebarComponent {
   }
 
   openMenudialog() {
-
+    this.menuDialogShow = !this.menuDialogShow;
   }
 
-  test() {
-    console.log('test');
-    
-  }
 
 }
